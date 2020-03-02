@@ -5,6 +5,7 @@ let inputText = document.querySelector(".input");
 // inputText
 // var library = [];
 library = JSON.parse(localStorage.getItem('books')) || []
+console.log(Array.isArray(library));
 // ** add book**
 function addBook(event) {    
     event.preventDefault();
@@ -24,10 +25,10 @@ function addBook(event) {
         // event.preventDefault();
 }
 //** delete button **
-function deleteBook(library, entry) {
-    console.log(entry);
-    let del = entry.target.dataset.id;
-   // console.log(del)
+function deleteBook(event) {
+    console.dir(event);
+    let del = event.target.dataset.id;
+    console.dir(del)
     let library1 = library.filter(x => x.id != del);
     // for(let i =0; i < library.length; i++) {
     //     if(library[i].id == del) {
@@ -53,7 +54,7 @@ function newBook(entry) {
     deleteButton.innerText = "Delete";
     li.innerText = book.name;
     //book.name = "";
-    deleteButton.addEventListener("click", () => deleteBook(library, entry));
+    deleteButton.addEventListener("click", deleteBook);
     ul.append(li, deleteButton);
     });
 }

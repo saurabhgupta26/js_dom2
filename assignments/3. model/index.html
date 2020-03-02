@@ -29,7 +29,27 @@
             .art_property {
                 list-style-type: none;
             }
+            .resultImage {
+                width: 500px;
+                height: 400px;
+                border: 10px double #114d36;
 
+            }
+            .name {
+                font-size: 28px;
+                color: forestgreen;
+            }
+            .category {
+                font-size: 18px;
+                color: rgb(14, 37, 9);
+            }
+            .image_property {
+                text-align: center;
+            }
+            h1 {
+                text-align: center;
+                color: rgb(37, 90, 204);
+            }
             
         </style>
         <main>
@@ -40,8 +60,8 @@
 
                 </ul>                
             </div>
-            <div>
-                <img class="resultImage" alt="">
+            <div class="image_property">
+                <img class="resultImage">
                 <h3 class="name">   </h3>
                 <p class="category"></p>
             </div>
@@ -63,10 +83,18 @@
                 li.appendChild(img);
                 li.appendChild(btn);
                 ul.appendChild(li);
+                btn.addEventListener("click", () => details(painting))
             });
             }
-
-
+            function details(data) {
+                let fullImage = document.querySelector(".resultImage");
+                fullImage.setAttribute("src", data.image);
+                let name = document.querySelector(".name")
+                name.innerText = data.name;
+                let category = document.querySelector(".category");
+                category.innerText = data.category;
+                div.appendChild(img, h3, p);
+            }     
         let data = [
             {
                 image:
