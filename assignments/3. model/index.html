@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Model Assignment</title>
+    </head>
+    <body onload="imageLibrary(data)">
+        <style>
+            .imagesCover {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+            }
+            .imageList {
+                width: 180px;
+                height: 150px;
+
+            }
+            .imageButton {
+                font-size: 20px;
+                width: 180px;
+                color: lightgreen;
+                background-color: darkolivegreen;
+                padding: 10px;
+                display: block;
+            }      
+            .art_property {
+                list-style-type: none;
+            }
+
+            
+        </style>
+        <main>
+            <h1 >Art Exhibition</h1>
+            <div class="images_library">
+                <ul class="imagesCover">
+
+
+                </ul>                
+            </div>
+            <div>
+                <img class="resultImage" alt="">
+                <h3 class="name">   </h3>
+                <p class="category"></p>
+            </div>
+        </main>
+        <script>
+            let ul = document.querySelector(".imagesCover");
+
+            function imageLibrary(data) {
+            data.forEach(painting => {
+                let li = document.createElement("li");
+                let btn = document.createElement("button");
+                btn.innerText = "Info"
+                li.setAttribute("data-id", Date.now());
+                li.classList.add("art_property")
+                let img = document.createElement("img");
+                img.setAttribute("src", painting.image);
+                img.classList.add("imageList");           
+                btn.classList.add("imageButton");
+                li.appendChild(img);
+                li.appendChild(btn);
+                ul.appendChild(li);
+            });
+            }
+
+
+        let data = [
+            {
+                image:
+                "http://data.mavo.io/portfolio/images/pasted-image-1494464667397.png",
+                name: "Carwash",
+                category: "Painting"
+            },
+            {
+                image:
+                "http://data.mavo.io/portfolio/images/pasted-image-1494528264937.png",
+                name: "Muck Mouth",
+                category: "Painting"
+            },
+            {
+                image:
+                "http://data.mavo.io/portfolio/images/pasted-image-1494528646446.png",
+                name: "Fishwall",
+                category: "Painting"
+            },
+            {
+                image: "http://data.mavo.io/portfolio/images/web-coffe-marilyn.jpg",
+                name: "Web Coffe Marilyn",
+                category: "Painting"
+            },
+            {
+                image:
+                "http://data.mavo.io/portfolio/images/pasted-image-1494903924970.png",
+                name: "Web 3 Jules",
+                category: "Painting"
+            },
+            {
+                image: "http://data.mavo.io/portfolio/images/web-electric3.jpg",
+                name: "Web electric3",
+                category: "Painting"
+            }
+            ];
+        </script>
+    </body>
+</html>

@@ -6,5 +6,85 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Forms</title>
   </head>
-  <body></body>
+  <body>
+    <style>
+      body {
+        margin: 0 auto;
+        max-width: 900px;
+      }
+      .label {
+        color: red;
+        font-size: 12px;        
+      }
+      .btn {
+    width: 875px;
+    height: 100px;
+    font-size: 34px;
+    color: darkslategray;
+    background: linear-gradient(to top right, rgb(95, 137, 151) , #b1992c);
+    margin-top: 40px;
+    }
+    .name, .emailAddress, .passwordField {
+      margin-left: 20px;
+    }
+    p {
+      margin-left: 10px;
+    }
+    .form {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }    
+    </style>
+
+    <div class="form">
+      <p>Full Name</p>
+      <input type="text" class="name">
+      <p>Email</p>
+      <input type="email" class="emailAddress">
+      <p>Password</p>
+      <input type="password" class="passwordField">
+      <p class="label"></p>
+      <button class="btn">Sign Up</button>
+
+    </div>
+
+
+
+
+
+    <script>
+      let nameField = document.querySelector(".name");
+      let email = document.querySelector(".emailAddress");
+      let password = document.querySelector(".passwordField");
+      let signUp = document.querySelector(".btn");
+      let warning = document.querySelector(".label");
+      //let formDetail = [];
+
+
+      
+
+      function signUpForm(event) {
+        console.log(event.value);
+        if(nameField.value === "") {
+          warning.innerText = "Name can't be empty";
+          console.log()
+        } else if (email.value === "") {
+          warning.innerText = "Email can't be empty";
+        } else if(password.value === "") {
+          //console.log(event)
+          warning.innerText = "Password can't be empty";
+        }
+        else {
+      alert(`You are ${nameField.value}, Your email address is: ${email.value} and password is ${password.value} `)
+      nameField.value = "";
+      email.value = "";
+      password.value = "";
+      document.body.appendChild(warning);
+      }
+    }    
+    signUp.addEventListener("click", signUpForm);
+    
+    </script>
+  </body>
 </html>

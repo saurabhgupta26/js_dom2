@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="./style.css"></script>
-    <title>Todo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>todos</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <div class="main_div">
+      <h1 class="heading">
+        todos
+      </h1>
+        <a href="#" class="downBtn"> <i class="fas fa-chevron-down"></i></a><input type="text" placeholder="What needs to be done?" class="inputText" style="padding-left: 80px">
+      <ul class="ul">
+        
+      </ul>
+    </div>
+    <footer class="footer">
+      <span class="remainingList">
+        0 items left
+      </span>
+      <ul class="footerUl">
+        <li class="totalList">
+          <a href="#">
+            All
+          </a>
+        </li>
+        <li class="activeList">
+          <a href="#">
+            Active
+          </a>
+        </li>
+        <li class="completedList">
+          <a href="#">
+            Completed
+          </a>
+        </li>
+      </ul>
+      <button class="clearBtn">
+        Clear Completed
+      </button>
+    </footer>
+    <script src="https://kit.fontawesome.com/6998401cd7.js" crossorigin="anonymous"></script>
     <script src="./main.js"></script>
   </body>
 </html>
