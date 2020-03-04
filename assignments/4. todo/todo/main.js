@@ -13,11 +13,8 @@ let downBtn = document.querySelector(".downBtn");
 resultList = JSON.parse(localStorage.getItem('result')) || []
 function downButton(resultList, event) {
     resultList.forEach(s=> s.isDone=true)
-    generateLi();
-    
+    generateLi();   
 }
-
-
 
 function checkboxTick(resultList, event) {
     let uid = event.target.dataset.id;
