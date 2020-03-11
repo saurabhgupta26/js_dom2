@@ -67,7 +67,9 @@ body {
     margin: 20px 0;
 
 }
-
+.logo {
+    text-decoration: none;
+}
 .inputText {
     font-size: 2.25rem;
     padding: 20px 10px;
@@ -94,7 +96,7 @@ p, span {
 }
 
 li {
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     border: 1px solid lightgrey;
     box-shadow: 1px 0px 5px -1px lightgray;
     border-top: 0;
@@ -103,11 +105,17 @@ li {
     justify-content: space-between;
     width: 609px;
 }
-.fas {
+/* .fas {
     position: relative;
     left: -260px;
     top: 80px;
     font-size: 1.5rem;
+} */
+img {
+    width: 45px;
+    position: relative;
+    left: -260px;
+    top: 90px;
 }
 
 .footer, .footerUl {
@@ -155,4 +163,17 @@ ul a {
 }
 .ul p {
     display: block;
+}
+
+.active {
+    background-color: rgb(199, 202, 202);
+    color: white;
+    /* box-shadow: 2px 2px 3px 4px rgb(110, 70, 70); */
+    box-shadow: 0 2px rgb(175, 138, 138);
+    transform: translateY(2px);
+    outline: 0;
+}
+
+.hideLi {
+    display: none;
 }

@@ -1,7 +1,7 @@
 let ul = document.querySelector(".ul");
 let btn = document.querySelector(".btn");
 let inputText = document.querySelector(".input");
-let search = document.querySelector("#search-books")
+let search = document.querySelector(".book_search");
 let hideButton = document.querySelector("#hide");
 
 // inputText
@@ -51,14 +51,23 @@ function newBook(entry) {
     });
 }
 // ** Book search ** //
-function searchBook(library, event) {
-    library.filter(newCharacter => newCharacter.include )
+function searchingBook(library, event) {
+    //event.preventDefault();
+    console.log(library.target);
+    // console.log(library.book);
+    var filteredBook = library.filter(word => {
+        return word.book.name.toLowerCase().includes(event.target.value.toLowerCase());
+        //console.log("newWord", word.book);
+    });
+
+    console.log(filteredBook);
+    // newBook(filteredBook);
 }
 
 
 
 // ** hide all ** 
-function hideAll(library, event) {
+function hideAll(event) {
     if(event.target.checked){
    // console.log(library);
     for(key of ul.children) {
@@ -104,5 +113,5 @@ function deleteBook(library, event) {
 
 
 btn.addEventListener("click", addBook);
-search.addEventListener("keyup", (event) => searchBook(library, event));
-hideButton.addEventListener("click", (event) => hideAll(library, event));
+search.addEventListener("keyup", (library, event) => searchingBook(library, event));
+hideButton.addEventListener("click", (event) => hideAll(event));

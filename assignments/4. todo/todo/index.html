@@ -7,12 +7,12 @@
     <title>todos</title>
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body onload="total(resultList)">
     <div class="main_div">
-      <h1 class="heading">
+      <a href="index.html" class="logo"><h1 class="heading">
         todos
-      </h1>
-        <a href="#" class="downBtn"> <i class="fas fa-chevron-down"></i></a><input type="text" placeholder="What needs to be done?" class="inputText" style="padding-left: 80px">
+      </h1></a>
+        <a href="#" class="downBtn"> <img src="media/UIF-76-512.png" alt="tick"></a><input type="text" placeholder="What needs to be done?" class="inputText" style="padding-left: 80px">
       <ul class="ul">
         
       </ul>
@@ -38,11 +38,11 @@
           </a>
         </li>
       </ul>
-      <button class="clearBtn">
+      <button type="submit" class="clearBtn">
         Clear Completed
       </button>
     </footer>
-    <script src="https://kit.fontawesome.com/6998401cd7.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/6998401cd7.js" crossorigin="anonymous"></script> -->
     <script src="./main.js"></script>
   </body>
 </html>
