@@ -30,7 +30,7 @@ function addBook(event) {
 }
 
 function newBook(entry) {
-    // event.preventDefault();
+     event.preventDefault();
     ul.innerHTML= "";
     //console.log("newBook", entry);
     library.forEach(book => {
@@ -45,7 +45,7 @@ function newBook(entry) {
     deleteButton.innerText = "Delete";
     li.innerText = book.name;
     //book.name = "";
-    deleteButton.addEventListener("click", (event) => deleteBook(library, event));
+    deleteButton.addEventListener("click",deleteBook);
     li.appendChild(deleteButton);
     ul.append(li);
     });
@@ -85,14 +85,15 @@ function hideAll(event) {
 
 }
 //** delete button **
-function deleteBook(library, event) {
+function deleteBook(event) {
+    
     if(event.target.tagName == 'BUTTON') {
         let del = event.target.dataset.id;
-       // console.dir("character", del);
-  //  console.dir(del)
-  
         library = library.filter(x => x.id != del)
-        console.log(library);
+        // console.dir("character", del);
+        //  console.dir(del)
+  
+        //    console.log(library);
         //localStorage.clear();
         // for(let i =0; i < library.length; i++) {
         //     if(library[i].id == del) {
@@ -101,17 +102,18 @@ function deleteBook(library, event) {
         //     }
         //ul.innerHTML = "";
         // console.log(library1);
-        localStorage.setItem('books', JSON.stringify(library))
+        //localStorage.clear();
+        localStorage.setItem('books', JSON.stringify(library));
         // debugger;
         // library.forEach(b => newBook(b));
         
-        newBook(library);
+         newBook(library);
         // debugger;
-        console.log(newBook(library));
+    //    console.log(newBook(library));
     }
 }
 
 
 btn.addEventListener("click", addBook);
 search.addEventListener("keyup", (library, event) => searchingBook(library, event));
-hideButton.addEventListener("click", (event) => hideAll(event));
+hideButton.addEventListener("click", hideAll);
