@@ -33,7 +33,7 @@ function newBook(entry) {
      event.preventDefault();
     ul.innerHTML= "";
     //console.log("newBook", entry);
-    library.forEach(book => {
+    entry.forEach(book => {
     let li = document.createElement("li")
     let deleteButton = document.createElement("button");
     // for(key of entry) {
@@ -51,16 +51,17 @@ function newBook(entry) {
     });
 }
 // ** Book search ** //
-function searchingBook(library, event) {
+function searchingBook(event) {
     //event.preventDefault();
-    console.log(library.target);
+    console.log((event.target.value).toLowerCase());
+    //console.dir(event.target.value);
+    //console.log(library.target);
     // console.log(library.book);
-    var filteredBook = library.filter(word => {
-        return word.book.name.toLowerCase().includes(event.target.value.toLowerCase());
-        //console.log("newWord", word.book);
-    });
-
+    var filteredBook = library.filter(word => ((word.name).toLowerCase()).includes((event.target.value).toLowerCase()));
     console.log(filteredBook);
+    newBook(filteredBook);
+
+    //console.log(filteredBook);
     // newBook(filteredBook);
 }
 
@@ -115,5 +116,5 @@ function deleteBook(event) {
 
 
 btn.addEventListener("click", addBook);
-search.addEventListener("keyup", (library, event) => searchingBook(library, event));
+search.addEventListener("keyup", searchingBook);
 hideButton.addEventListener("click", hideAll);
