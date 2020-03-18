@@ -5,27 +5,27 @@
     <link href="style.css" rel="stylesheet" />
     <title>Bookly App</title>
   </head>
-  <body>
+  <body onload="newBook(library)">
   	<div id="wrapper">
 	    <header>
 	    	<div id="page-banner">
 	    		<h1 class="title">Bookly</h1>
-          <p>Best Books For Hackers</p>
-          <form id="search-books">
-            <input type="text" placeholder="Search books..." />
-          </form>
+          		<p>Best Books For Hackers</p>
+          		<form id="search-books">
+            		<input class="book_search" type="text" placeholder="Search books..." />
+          		</form>
 	    	</div>
 	    </header>
 	    <div id="book-list">
 	    	<h2 class="title">Books to Read</h2>
-	    	<ul>
+	    	<ul class="ul">
 	    	</ul>
 	    </div>
 	    <form id="add-book">
         <input type="checkbox" id="hide" />
         <label for="hide">Hide all books</label>
-	    	<input type="text" placeholder="Add a book..." />
-	    	<button>Add</button>
+	    	<input class="input" type="text" placeholder="Add a book..." />
+	    	<button type="submit" class="btn">Add</button>
 	    </form>
 		</div>
     <script src="app.js"></script>		

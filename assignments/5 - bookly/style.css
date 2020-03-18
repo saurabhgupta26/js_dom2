@@ -66,14 +66,15 @@ h1, h2{
 .delete{
     float: right;
     background: #e91e63;
-    padding: 6px;
-    border-radius: 4px;
+    padding: 8px 30px;
+    border-radius: 6px;
     cursor: pointer;
     color: white;
 }
 
 .delete:hover{
     background: #333;
+    color: black;
 }
 
 #add-book{
